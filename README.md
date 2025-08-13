@@ -77,7 +77,7 @@ echo "C: $(grep -v "^>" BRCA1.fasta | grep -o "C" | wc -l)" >> Adejuwon.fasta
 
 ```
 
-# 19. GitHub repository link: https://github.com/A-Adegite/output
+### 19. GitHub repository link: https://github.com/A-Adegite/output
 
 # 1. Initialize and activate conda
 conda init
@@ -92,6 +92,7 @@ conda install tsnyder::figlet
 figlet Adejuwon
 
 # 4. Install bioinformatics tools
+```
 conda install bioconda::bwa
 conda install bioconda::blast
 conda install bioconda::samtools
