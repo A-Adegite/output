@@ -6,57 +6,95 @@ Contributors (Slack Handles): @a_adegite
 
 ## Project 1: BASh Basic
 
+# Bioinformatics Command Line Project
+
+## Stage 1: BASh Basic Project
+
+### Project Execution Commands
+
 ```bash
+# 1. Login to coding workspace (credentials not shown)
+
+# 2. Create personal folder
 mkdir Adejuwon
+
+# 3. Create biocomputing directory and navigate
 mkdir biocomputing && cd biocomputing
+
+# 4. Download required files
 wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.fna
 wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.gbk
 wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.gbk
+
+# 5. Move .fna file to personal folder
 mv wildtype.fna ../Adejuwon/
+
+# 6. Remove duplicate GBK file
 rm wildtype.gbk.1
+
+# 7. Check sequence type (wildtype vs mutant)
 grep -o 'tatatata' ../Adejuwon/wildtype.fna
-grep 'tatatata' ../Adejuwon/wildtype.fna > mutant.txt
-wget "https://www.ebi.ac.uk/ena/browser/api/fasta/U14680.1?lineLimit=1000" -O BRCA1.fasta
+
+# 8. Create mutant sequence file
+grep -o 'tatatata' ../Adejuwon/wildtype.fna > mutant.txt
+
+# 9. Selected favorite gene: BRCA1
+
+# 10. Download gene FASTA
+wget https://www.ebi.ac.uk/ena/browser/api/fasta/U14680.1?lineLimit=1000 -O BRCA1.fasta
+
+# 11. Count non-header lines
 grep -v "^>" BRCA1.fasta | wc -l
+
+# 12. Count Adenine bases
 grep -v "^>" BRCA1.fasta | grep -o "A" | wc -l
+
+# 13. Count Guanine bases
 grep -v "^>" BRCA1.fasta | grep -o "G" | wc -l
+
+# 14. Count Cytosine bases
 grep -v "^>" BRCA1.fasta | grep -o "C" | wc -l
+
+# 15. Count Thymine bases
 grep -v "^>" BRCA1.fasta | grep -o "T" | wc -l
+
+# 16. Calculate GC content
 G=$(grep -v "^>" BRCA1.fasta | grep -o "G" | wc -l)
 C=$(grep -v "^>" BRCA1.fasta | grep -o "C" | wc -l)
-total=$(grep -v "^>" BRCA1.fasta | grep -o "[ACGT]" | wc -l)
-GC_content=$(echo "scale=2; ($G + $C)*100/$total" | bc)
-echo $GC_content
+length=$(grep -v "^>" BRCA1.fasta | grep -o "[ACGT]" | wc -l)
+GC=$((G + C))
+GC_content=$(echo "scale=1; ${GC} / ${length} * 100" | bc)
+echo "${GC_content}"
+
+# 17. Create personal FASTA file
 touch Adejuwon.fasta
+
+# 18. Save nucleotide counts to file
 echo "A: $(grep -v "^>" BRCA1.fasta | grep -o "A" | wc -l)" >> Adejuwon.fasta
 echo "G: $(grep -v "^>" BRCA1.fasta | grep -o "G" | wc -l)" >> Adejuwon.fasta
 echo "T: $(grep -v "^>" BRCA1.fasta | grep -o "T" | wc -l)" >> Adejuwon.fasta
 echo "C: $(grep -v "^>" BRCA1.fasta | grep -o "C" | wc -l)" >> Adejuwon.fasta
 
-# Upload links
-# Output folder: https://github.com/A-Adegite/output
-# Script folder: https://github.com/A-Adegite/script
+# 19. GitHub repository link: https://github.com/A-Adegite/output
 
-history > Adejuwon.sh
-clear
-history
-ls ../Adejuwon
-ls
-
-
-## Project 2: Installing Bioinformatics Software on the Terminal
-
+# 1. Initialize and activate conda
+conda init
 conda activate base
+
+# 2. Create and activate environment
 conda create -n funtools
 conda activate funtools
-conda install -c conda-forge figlet
-figlet Adejuwon
-conda install -c bioconda bwa
-conda install -c bioconda blast
-conda install -c bioconda samtools
-conda install -c bioconda bedtools
-conda install -c bioconda spades
-conda install -c bioconda bcftools
-conda install -c bioconda fastp
-conda install -c bioconda multiqc
 
+# 3. Install Figlet and test
+conda install tsnyder::figlet
+figlet Adejuwon
+
+# 4. Install bioinformatics tools
+conda install bioconda::bwa
+conda install bioconda::blast
+conda install bioconda::samtools
+conda install bioconda::bedtools
+conda install bioconda::spades
+conda install bioconda::bcftools
+conda install bioconda::fastp
+conda install bioconda::multiqc
