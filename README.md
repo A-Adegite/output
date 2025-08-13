@@ -75,6 +75,8 @@ echo "G: $(grep -v "^>" BRCA1.fasta | grep -o "G" | wc -l)" >> Adejuwon.fasta
 echo "T: $(grep -v "^>" BRCA1.fasta | grep -o "T" | wc -l)" >> Adejuwon.fasta
 echo "C: $(grep -v "^>" BRCA1.fasta | grep -o "C" | wc -l)" >> Adejuwon.fasta
 
+```
+
 # 19. GitHub repository link: https://github.com/A-Adegite/output
 
 # 1. Initialize and activate conda
