@@ -1,12 +1,12 @@
 # HackBio 2025 — Stage 1 Project Submission
 
 ## Team Information
-Team Name: Your Team Name Here  
+Team Name: Team Testrun
 Contributors (Slack Handles): @a_adegite
 
 ## Project 1: BASh Basic
 
-$
+```bash
 mkdir Adejuwon
 mkdir biocomputing && cd biocomputing
 wget https://raw.githubusercontent.com/josoga2/dataset-repos/main/wildtype.fna
@@ -43,6 +43,7 @@ history
 ls ../Adejuwon
 ls
 
+
 ## Project 2: Installing Bioinformatics Software on the Terminal
 
 conda activate base
@@ -58,3 +59,4 @@ conda install -c bioconda spades
 conda install -c bioconda bcftools
 conda install -c bioconda fastp
 conda install -c bioconda multiqc
+
