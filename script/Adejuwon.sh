@@ -30,3 +30,19 @@ echo "C: $(grep -v "^>" BRCA1.fasta | grep -o "C" | wc -l)" >> Adejuwon.fasta
 
 https://github.com/A-Adegite/output
 
+
+conda init
+conda activate base
+conda create -n funtools
+conda activate funtools
+conda install tsnyder::figlet
+figlet Adejuwon
+conda install bioconda::bwa
+conda install bioconda::blast
+conda install bioconda::samtools
+conda install bioconda::bedtools
+conda install bioconda::spades
+conda install bioconda::bcftools
+conda install bioconda::fastp
+conda install bioconda::multiqc
+
