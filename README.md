@@ -4,10 +4,6 @@
 Team Name: Team Testrun
 Contributors (Slack Handles): @a_adegite
 
-## Project 1: BASh Basic
-
-# Bioinformatics Command Line Project
-
 ## Stage 1: BASh Basic Project
 
 ### Project Execution Commands
@@ -79,19 +75,25 @@ echo "C: $(grep -v "^>" BRCA1.fasta | grep -o "C" | wc -l)" >> Adejuwon.fasta
 
 ### 19. GitHub repository link: https://github.com/A-Adegite/output
 
-# 1. Initialize and activate conda
+## 1. Initialize and activate conda
+```
 conda init
 conda activate base
+```
 
-# 2. Create and activate environment
+## 2. Create and activate environment
+```
 conda create -n funtools
 conda activate funtools
+```
 
-# 3. Install Figlet and test
+## 3. Install Figlet and test
+```
 conda install tsnyder::figlet
 figlet Adejuwon
+```
 
-# 4. Install bioinformatics tools
+## 4. Install bioinformatics tools
 ```
 conda install bioconda::bwa
 conda install bioconda::blast
