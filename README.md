@@ -1,12 +1,15 @@
 # HackBio 2025 — Stage 1 Project Submission
 
 ## Team Information
-Team Name: Team Testrun
-Contributors (Slack Handles): @a_adegite
+
+- **Team Name:** Team Testrun  
+- **Contributors (Slack Handles):** @a_adegite
+
+---
 
 ## Stage 1: BASh Basic Project
 
-### Project Execution Commands
+### Project Execution Steps
 
 ```bash
 # 1. Login to coding workspace (credentials not shown)
@@ -73,7 +76,7 @@ echo "C: $(grep -v "^>" BRCA1.fasta | grep -o "C" | wc -l)" >> Adejuwon.fasta
 
 ```
 
-### 19. GitHub repository link: https://github.com/A-Adegite/output
+### 19. [GitHub Repository](https://github.com/A-Adegite/output)
 
 ## 1. Initialize and activate conda
 ```
@@ -81,7 +84,7 @@ conda init
 conda activate base
 ```
 
-## 2. Create and activate environment
+## 2. Create and activate the environment
 ```
 conda create -n funtools
 conda activate funtools
